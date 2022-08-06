@@ -1,4 +1,4 @@
-const { OAuthApp, createNodeMiddleware } = require("@octokit/oauth-app");
+const {OAuthApp, createNodeMiddleware} = require("@octokit/oauth-app");
 
 const app = new OAuthApp({
     clientType: "oauth-app",
@@ -6,10 +6,10 @@ const app = new OAuthApp({
     clientSecret: "13f5a94b3e453ddd948ff1e32645ce3b16015560",
 });
 
-// app.on("token", async ({ octokit }) => {
-//     const { data } = await octokit.request("GET /user");
-//     console.log(`Token retrieved for ${data.login}`);
-// });
+app.on("token.created", async ({octokit}) => {
+    const {data} = await octokit.request("GET /user");
+    console.log(`Token retrieved for ${data.login}`);
+});
 
 require("http").createServer(createNodeMiddleware(app)).listen(3000);
 // can now receive user authorization callbacks at /api/github/oauth/callback
