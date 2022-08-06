@@ -3,7 +3,7 @@ const { OAuthApp, createNodeMiddleware } = require("@octokit/oauth-app");
 const app = new OAuthApp({
     clientType: "oauth-app",
     clientId: "d18fe7df0f5527d36cd8",
-    clientSecret: "a7016f89284ee335d352ee771f266b85b1d0daf8",
+    clientSecret: "13f5a94b3e453ddd948ff1e32645ce3b16015560",
 });
 
 app.on("token", async ({ octokit }) => {
