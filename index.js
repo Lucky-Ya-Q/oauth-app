@@ -6,7 +6,7 @@ const app = new OAuthApp({
     clientSecret: "a7016f89284ee335d352ee771f266b85b1d0daf8",
 });
 
-app.on("token", async ({ token, octokit }) => {
+app.on("token", async ({ octokit }) => {
     const { data } = await octokit.request("GET /user");
     console.log(`Token retrieved for ${data.login}`);
 });
