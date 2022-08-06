@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@octokit/oauth-app": "^4.0.6"
+    "@octokit/oauth-app": "^4.0.6",
+    "@vercel/node": "^2.5.6"
   }
 }
